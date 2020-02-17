@@ -1,0 +1,36 @@
+repository: multi-ping
+registries:
+  - us.gcr.io/boxed-api-staging/boxed
+  - us.gcr.io/boxed-api/boxed
+
+defaults:
+  app_name: multi-ping
+  secret:
+    provider: s3
+    bucket: boxed-secrets
+  cronjob:
+    memory_limits: 200Mi
+    cpu_limits: 100m
+    healthcheck: False
+    #healthcheck_path: /
+
+environments:
+  staging:
+    namespace: staging
+    config:
+      env: staging
+    secret:
+      environment: staging
+    cronjob:
+      replicas: 1
+      image_repo: us.gcr.io/boxed-api-staging/boxed
+
+  prod:
+    namespace: prod
+    config:
+      env: prod
+    secret:
+      environment: prod
+    cronjob:
+      replicas: 1
+      image_repo: us.gcr.io/boxed-api/boxed

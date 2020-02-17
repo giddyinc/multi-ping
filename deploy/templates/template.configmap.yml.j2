@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ app_name }}
+data:
+  env: {{ config.env }}
+  port: "3000"
