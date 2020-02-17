@@ -7,11 +7,11 @@ node {
     env.APPS = "multi-ping"
 
     switch (env.BRANCH_NAME) {
-        case "master":
+        /*case "master":
             kubeContext = 'gke_boxed-api_us-east4_production'
             namespace = 'prod'
             environment = 'prod'
-            break
+            break */
 
         case "staging":
             kubeContext = 'gke_boxed-api-staging_us-east4_staging'

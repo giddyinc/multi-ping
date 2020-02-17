@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: {{ app_name }}
 spec:
-  schedule: "*/10 * * * *"
+  schedule: "*/1 * * * *"
   failedJobsHistoryLimit: 5
   successfulJobsHistoryLimit: 3
   startingDeadlineSeconds: 100
