@@ -25,8 +25,7 @@ from multiping import multi_ping
 if __name__ == "__main__":
 
     # A list of addresses and names, which should be pinged.
-    addrs = ["8.8.8.8", "cnn.com", "127.0.0.1", "youtube.com",
-             "2001:4860:4860::8888"]
+    addrs = ["10.11.7.1", "10.6.7.1", "10.30.1.1", "youtube.com"]
 
     print("sending one round of pings and checking twice for responses")
     mp = MultiPing(addrs)
@@ -35,7 +34,7 @@ if __name__ == "__main__":
     # localhost so far. Note: 0.01 seconds is usually a very unrealistic
     # timeout value. 1 second, or so, may be more useful in a real world
     # example.
-    responses, no_responses = mp.receive(0.01)
+    responses, no_responses = mp.receive(0.1)
 
     print("   received responses:  %s" % list(responses.keys()))
     print("   no responses so far: %s" % no_responses)
@@ -55,7 +54,7 @@ if __name__ == "__main__":
     mp = MultiPing(addrs)
     for i in range(3):
         mp.send()
-        responses, no_response = mp.receive(0.01)
+        responses, no_response = mp.receive(0.1)
 
         print("    received responses:     %s" % list(responses.keys()))
         if not no_response:
