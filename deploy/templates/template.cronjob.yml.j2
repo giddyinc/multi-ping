@@ -42,14 +42,8 @@ spec:
             volumeMounts:
             - mountPath: "/srv/shared/secrets"
               name: secrets
-            - mountPath: "/srv/app/multi-ping/config/token.pickle"
-              name: multi-ping-api
-              subPath: token.pickle
           volumes:
           - name: secrets
             secret:
               secretName: {{ app_name }}
-          - name: multi-ping-api
-            secret:
-              secretName: multi-ping-api-credentials
           restartPolicy: Never
