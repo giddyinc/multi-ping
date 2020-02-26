@@ -25,7 +25,7 @@ from multiping import multi_ping
 if __name__ == "__main__":
 
     # A list of addresses and names, which should be pinged.
-    addrs = ["10.11.7.1", "10.6.7.1", "10.30.1.1", "youtube.com"]
+    addrs = ["10.11.7.1", "10.6.7.1", "10.30.1.1"]
 
     print("sending one round of pings and checking twice for responses")
     mp = MultiPing(addrs)
