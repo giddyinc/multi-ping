@@ -39,9 +39,9 @@ spec:
                 secretKeyRef:
                   name: {{ app_name }}
                   key: slack_token
-            #volumeMounts:
-           # - mountPath: "/srv/shared/secrets"
-             # name: secrets
+            volumeMounts:
+            - mountPath: "/srv/shared/secrets"
+              name: secrets
             #- mountPath: "/srv/app/kube-calendar-autoscaler/config/token.pickle"
              # name: calendar-api
               #subPath: token.pickle
@@ -49,7 +49,7 @@ spec:
           - name: secrets
             secret:
               secretName: {{ app_name }}
-          - name: multi-ping
-            secret:
-              secretName: multi-ping-credentials
+          #- name: multi-ping
+           # secret:
+            #  secretName: multi-ping-credentials
           restartPolicy: Never
