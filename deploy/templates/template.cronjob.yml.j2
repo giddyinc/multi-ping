@@ -42,14 +42,8 @@ spec:
             volumeMounts:
             - mountPath: "/srv/shared/secrets"
               name: secrets
-            #- mountPath: "/srv/app/kube-calendar-autoscaler/config/token.pickle"
-             # name: calendar-api
-              #subPath: token.pickle
           volumes:
           - name: secrets
             secret:
               secretName: {{ app_name }}
-          #- name: multi-ping
-           # secret:
-            #  secretName: multi-ping-credentials
           restartPolicy: Never
