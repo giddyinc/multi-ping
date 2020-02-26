@@ -13,7 +13,7 @@ node {
             environment = 'prod'
             break */
 
-        case "staging":
+        case "master":
             kubeContext = 'gke_boxed-api-staging_us-east4_staging'
             namespace = "staging"
             environment = 'staging'
