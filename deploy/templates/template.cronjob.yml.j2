@@ -19,7 +19,7 @@ spec:
           containers:
           - name: {{ app_name }}
             image: {{ cronjob.image_repo }}/{{ app_name }}:latest
-            args: ["multi-ping/demo.py"]
+            args: ["demo.py"]
             imagePullPolicy: IfNotPresent
             resources:
               limits:
